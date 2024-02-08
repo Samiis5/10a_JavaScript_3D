@@ -11,6 +11,7 @@
     width: inherit;
     height: inherit;
     transform-style: preserve-3d;
+   
 }
 
 #square1 {
@@ -36,7 +37,28 @@
     background: rgba(124, 34, 46, 0.5);
     transform: translate3d(200px, 430px, -100px) rotateX(90deg) ;
 }
+#square4 {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background: rgba(20, 116, 206, 0.5);
+    transform: translate3d(200px, 230px, -100px) rotateX(90deg) ;
+}
 
+#square5 {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background: rgba(206, 228, 10, 0.5);
+    transform: translate3d(100px, 330px, -100px) rotateY(90deg) ;
+}
+#square6 {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background: rgba(94, 247, 5, 0.5);
+    transform: translate3d(300px, 330px, -100px) rotateY(90deg) ;
+}
 #pawn {
     position: absolute;
     width: 20px;
