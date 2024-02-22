@@ -13,28 +13,8 @@
     transform-style: preserve-3d;
 }
 
-#square1 {
+.square {
     position: absolute;
-    height: 200px;
-    width: 200px;
-    background: rgba(124, 34, 46, 0.5);
-    transform: translate3d(200px, 330px, 0px) rotateX(0deg);
-}
-
-#square2 {
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    background: rgba(112, 124, 34, 0.5);
-    transform: translate3d(200px, 330px, -200px) rotateX(0deg);
-}
-
-#square3 {
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    background: rgba(124, 34, 46, 0.5);
-    transform: translate3d(200px, 430px, -100px) rotateX(90deg) ;
 }
 
 #pawn {
