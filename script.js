@@ -1,26 +1,86 @@
 const world = document.getElementById('world');
 //[x(0),y(1),z(2),rx(3),ry(4),rz(5),width(6),heigth(7),"rgba(124, 34, 46, 0.5)"],
 var map = [
-    [0,0,0,0,0,0,200,200,"rgba(124, 34, 46, 0.5)"],
-    [200,330,-200,0,0,0,200,200,"rgba(112, 124, 34, 0.5)"],
-    [200,430,-100,90,0,0,200,200,"rgba(124, 34, 46, 0.5)"],
-    [200,230,-100,90,0,0,200,200,"rgba(124, 34, 46, 0.5)"]
+    [0,100,0,90,0,0,2000,2000,"rgba(124, 34, 46, 0.5)"],//grida
+    [0,0,-1000,0,0,0,2000,200,"rgba(135, 234, 146, 0.5)"],//priekseja siena
+    [-1000,0,0,0,90,0,2000,200,"rgba(95, 4, 146, 0.5)"],//kreisa siena
+    [1000,0,0,0,90,0,2000,200,"rgba(17, 73, 255, 0.5)"],//laba siena
+    [0,0,1000,0,0,0,2000,200,"rgba(74, 88, 69, 0.5)"]
 ];
 
-for(let i = 0; i < 4; i++){
-    let newElement = document.createElement('div');
-    newElement.className = "square";
-    newElement.id = "square"+i;
-    newElement.style.position = "absolute";
-    newElement.style.height = map[i][7] + "px";
-    newElement.style.width = map[i][6]+"px";
-    newElement.style.background = map[i][8];
-    newElement.style.transform = `translate3d(
-        ${1200/2 - map[i][6]/2 + map[i][0]}px, 
-        ${800/2 - map[i][7]/2 + map[i][1]}px, 
-        ${map[i][2]}px) 
-        rotateX(${map[i][3]}deg)
-        rotateY(${map[i][4]}deg)
-        rotateZ(${map[i][5]}deg)`;
-    world.appendChild(newElement);
+var mape = [
+    [0,100,0,90,0,0,2000,2000,"red"],//grida
+    [0,0,-1000,0,0,0,2000,200,"pink"],//priekseja siena
+    [-1000,0,0,0,90,0,2000,200,"black"],//kreisa siena
+    [1000,0,0,0,90,0,2000,200,"cyan"],//laba siena
+    [0,0,1000,0,0,0,2000,200,"green"]
+];
+
+function player(x, y, z, rx, ry, rz) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.rx = rx;
+    this.ry = ry;
+    this.rz = rz;
 }
+
+var pawn = new player(0, 0, 0, 0, 0, 0);
+
+var vel = 5;
+var forward = 0;
+var backward = 0;
+
+function move(ev, atrums) {
+    if(ev.keyCode == 87){
+        forward = atrums;
+    }
+    if(ev.keyCode == 83){
+        backward = atrums;
+    }
+}
+
+document.addEventListener("keydown", (event) => {this.move(event, vel)});
+document.addEventListener("keyup", (event) => {this.move(event, 0)});
+
+function createWorld(pasaule, nosaukums) {
+    for(let i = 0; i < pasaule.length; i++){
+        let newElement = document.createElement('div');
+        newElement.className = "square" + nosaukums;
+        newElement.id = "square" + nosaukums + i;
+        newElement.style.position = "absolute";
+        newElement.style.height = pasaule[i][7] + "px";
+        newElement.style.width = pasaule[i][6]+"px";
+        newElement.style.background = pasaule[i][8];
+        newElement.style.transform = `translate3d(
+            ${1200/2 - pasaule[i][6]/2 + pasaule[i][0]}px, 
+            ${800/2 - pasaule[i][7]/2 + pasaule[i][1]}px, 
+            ${pasaule[i][2]}px) 
+            rotateX(${pasaule[i][3]}deg)
+            rotateY(${pasaule[i][4]}deg)
+            rotateZ(${pasaule[i][5]}deg)`;
+        world.appendChild(newElement);
+    }
+}
+
+createWorld(mape, "pasaule2");
+
+function update() {
+    let dz = forward - backward;
+
+    pawn.z += dz;
+
+    world.style.transform = `
+        translateZ(600px)
+        rotateX(${pawn.rx}deg)
+        rotateY(${pawn.ry}deg)
+        rotateZ(${pawn.rz}deg)
+        translate3d(
+            ${pawn.x}px, 
+            ${pawn.y}px, 
+            ${pawn.z}px
+        ) 
+    `;
+}
+
+game = setInterval(update, 10);

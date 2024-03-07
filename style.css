@@ -4,6 +4,7 @@
     width: 1200px;
     border: 2px solid #000;
     perspective: 600px;
+    overflow: hidden;
 }
 
 #world {
@@ -11,10 +12,6 @@
     width: inherit;
     height: inherit;
     transform-style: preserve-3d;
-}
-
-.square {
-    position: absolute;
 }
 
 #pawn {
