@@ -50,6 +50,11 @@ function move(ev, atrums) {
 
 document.addEventListener("keydown", (event) => {this.move(event, vel)});
 document.addEventListener("keyup", (event) => {this.move(event, 0)});
+document.addEventListener("mousemove", (event) => {
+    mouseX = event.movementX;
+    mouseY = event.movementY;
+    console.log(`MouseX = ${mouseX}, MouseY = ${mouseY}`);
+})
 
 function createWorld(pasaule, nosaukums) {
     for(let i = 0; i < pasaule.length; i++){
