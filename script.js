@@ -82,18 +82,20 @@ function update() {
     dz = forward - backward;
     dx = left - right;
 
+    drx = mouseY;
     dry = -mouseX;
+
+    mouseX = mouseY = 0;
 
     pawn.z += dz;
     pawn.x += dx;
 
+    pawn.rx += drx;
     pawn.ry += dry;
-
-    mouseX = 0;
 
     world.style.transform = `
         translateZ(600px)
-        rotateX(${pawn.rx}deg)
+        rotateX(${-pawn.rx}deg)
         rotateY(${-pawn.ry}deg)
         rotateZ(${pawn.rz}deg)
         translate3d(
