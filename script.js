@@ -30,6 +30,8 @@ var pawn = new player(0, 0, 0, 0, 0, 0);
 var vel = 5;
 var forward = 0;
 var backward = 0;
+var left = 0;
+var right = 0;
 
 function move(ev, atrums) {
     if(ev.keyCode == 87){
@@ -38,6 +40,12 @@ function move(ev, atrums) {
     if(ev.keyCode == 83){
         backward = atrums;
     }
+    if(ev.keyCode == 65){
+        left = atrums;
+    }
+    if(ev.keyCode == 68){
+        right = atrums;
+}
 }
 
 document.addEventListener("keydown", (event) => {this.move(event, vel)});
@@ -67,8 +75,11 @@ createWorld(mape, "pasaule2");
 
 function update() {
     let dz = forward - backward;
+    let dx = left - right
+
 
     pawn.z += dz;
+    pawn.x += dx;
 
     world.style.transform = `
         translateZ(600px)
