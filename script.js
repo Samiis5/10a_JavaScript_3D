@@ -79,17 +79,22 @@ function createWorld(pasaule, nosaukums) {
 createWorld(mape, "pasaule2");
 
 function update() {
-    let dz = forward - backward;
-    let dx = left - right
+    dz = forward - backward;
+    dx = left - right;
 
+    dry = -mouseX;
 
     pawn.z += dz;
     pawn.x += dx;
 
+    pawn.ry += dry;
+
+    mouseX = 0;
+
     world.style.transform = `
         translateZ(600px)
         rotateX(${pawn.rx}deg)
-        rotateY(${pawn.ry}deg)
+        rotateY(${-pawn.ry}deg)
         rotateZ(${pawn.rz}deg)
         translate3d(
             ${pawn.x}px, 
