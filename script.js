@@ -68,7 +68,6 @@ document.addEventListener("pointerlockchange", (event) => {
 container.onclick = function(){
     if(!lock){
         container.requestPointerLock();
-        console.log("ir")
     }
 }
 
