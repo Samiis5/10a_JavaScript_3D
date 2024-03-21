@@ -1,3 +1,4 @@
+const container = document.getElementById('container');
 const world = document.getElementById('world');
 //[x(0),y(1),z(2),rx(3),ry(4),rz(5),width(6),heigth(7),"rgba(124, 34, 46, 0.5)"],
 var map = [
@@ -32,6 +33,9 @@ var forward = 0;
 var backward = 0;
 var left = 0;
 var right = 0;
+var lock = false;
+var canlock = false;
+var mouseX = mouseY = 0;
 
 function move(ev, atrums) {
     if(ev.keyCode == 87){
@@ -49,12 +53,24 @@ function move(ev, atrums) {
 }
 
 document.addEventListener("keydown", (event) => {this.move(event, vel)});
+
 document.addEventListener("keyup", (event) => {this.move(event, 0)});
+
 document.addEventListener("mousemove", (event) => {
     mouseX = event.movementX;
     mouseY = event.movementY;
-    console.log(`MouseX = ${mouseX}, MouseY = ${mouseY}`);
-})
+});
+
+document.addEventListener("pointerlockchange", (event) => {
+    lock = !lock;
+});
+
+container.onclick = function(){
+    if(!lock){
+        container.requestPointerLock();
+        console.log("ir")
+    }
+}
 
 function createWorld(pasaule, nosaukums) {
     for(let i = 0; i < pasaule.length; i++){
@@ -90,8 +106,11 @@ function update() {
     pawn.z += dz;
     pawn.x += dx;
 
-    pawn.rx += drx;
-    pawn.ry += dry;
+    if(lock){
+        pawn.rx += drx;
+        pawn.ry += dry;
+    }
+    
 
     world.style.transform = `
         translateZ(600px)
