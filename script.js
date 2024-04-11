@@ -113,9 +113,11 @@ function update() {
     if(lock){   
         if(pawn.rx + drx < -35){
             pawn.rx = -35;
+            drx = 0;
         }
         if(pawn.rx + drx > 35){
             pawn.rx = 35;
+            drx = 0;
         } else {
             pawn.rx += drx;
         }
