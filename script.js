@@ -8,15 +8,16 @@ var map = [
     [1000,0,0,0,90,0,2000,200,"rgba(17, 73, 255, 0.5)"],//laba siena
     [0,0,1000,0,0,0,2000,200,"rgba(74, 88, 69, 0.5)"]
 ];
+
 var h = 500;
 var w = 3000;
 var mape = [
-    [0,h/2,0,90,0,0,w,w,"red"],//grida
-    [0,0,-w/2,0,0,0,w,h,"pink"],//priekseja siena
-    [-w/2,0,0,0,90,0,w,h,"black"],//kreisa siena
-    [w/2,0,0,0,90,0,w,h,"cyan"],//laba siena
-    [0,0,w/2,0,0,0,w,h,"green"],
-    [0,-h/2,0,90,0,0,w,w,"yellow"],
+    [0,h/2,0,90,0,0,w,w,"url(img/zeme.jpg)"],//grida
+    [0,0,-w/2,0,0,0,w,h,"url(img/siena.jpg)"],//priekseja siena
+    [-w/2,0,0,0,90,0,w,h,"url(img/siena.jpg)"],//kreisa siena
+    [w/2,0,0,0,90,0,w,h,"url(img/siena.jpg)"],//laba siena
+    [0,0,w/2,0,0,0,w,h,"url(img/siena.jpg)"],
+    [0,-h/2,0,90,0,0,w,w,"url(img/wood.jpg)"],
 ];
 
 function player(x, y, z, rx, ry, rz) {
@@ -94,7 +95,7 @@ function createWorld(pasaule, nosaukums) {
     }
 }
 
-createWorld(map, "map");
+createWorld(mape, "map");
 
 function update() {
     dzt = forward - backward;
