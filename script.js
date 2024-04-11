@@ -30,6 +30,15 @@ var mape = [
     [0,-h/2,0,90,0,0,w,w,"url(img/wood.jpg)"],
 ];
 
+var mapeSam = [
+    [0,h/2,0,90,0,0,w,w,"url(img/ceilingsam.jpg)"],//grida
+    [0,0,-w/2,0,0,0,w,h,"url(img/ceilingsam.jpg)"],//priekseja siena
+    [-w/2,0,0,0,90,0,w,h,"url(img/ceilingsam.jpg)"],//kreisa siena
+    [w/2,0,0,0,90,0,w,h,"url(img/ceilingsam.jpg)"],//laba siena
+    [0,0,w/2,0,0,0,w,h,"url(img/ceilingsam.jpg)"],
+    [0,-h/2,0,90,0,0,w,w,"url(img/ceilingsam.jpg)"],
+];
+
 var mapelote = [
     [0,h/2,0,90,0,0,w,w,"url(img/floorl.jpg)"],//grida
     [0,0,-w/2,0,0,0,w,h,"url(img/walll2.jpg)"],//priekseja siena
@@ -124,7 +133,8 @@ function createWorld(pasaule, nosaukums) {
     }
 }
 
-createWorld(mapelote, "map");
+createWorld(mapeSam, "map");
+
 
 function update() {
     dzt = forward - backward;
