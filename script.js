@@ -20,6 +20,16 @@ var mape = [
     [0,-h/2,0,90,0,0,w,w,"url(img/wood.jpg)"],
 ];
 
+var mapeToms = [
+    [0,h/2,0,90,0,0,w,w,"url(img/zemeToms.jpg)"],//grida
+    [0,0,-w/2,0,0,0,w,h,"url(img/sienaToms.jpg)"],//priekseja siena
+    [-w/2,0,0,0,90,0,w,h,"url(img/sienaToms.jpg)"],//kreisa siena
+    [w/2,0,0,0,90,0,w,h,"url(img/sienaToms.jpg)"],//laba siena
+    [0,0,w/2,0,0,0,w,h,"url(img/sienaToms.jpg)"],
+    [0,-h/2,0,90,0,0,w,w,"url(img/woodToms.jpg)"],
+];
+
+
 function player(x, y, z, rx, ry, rz) {
     this.x = x;
     this.y = y;
