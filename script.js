@@ -11,6 +11,16 @@ var map = [
 
 var h = 500;
 var w = 3000;
+var mapeAuce = [
+    [0,h/2,0,90,0,0,w,w,"url(img/gridaAuce.jpg)"],//grida
+    [0,0,-w/2,0,0,0,w,h,"url(img/sienaAuce.jpg)"],//priekseja siena
+    [-w/2,0,0,0,90,0,w,h,"url(img/sienaAuce.jpg)"],//kreisa siena
+    [w/2,0,0,0,90,0,w,h,"url(img/sienaAuce.jpg)"],//laba siena
+    [0,0,w/2,0,0,0,w,h,"url(img/sienaAuce.jpg)"],
+    [0,-h/2,0,90,0,0,w,w,"url(img/griestiAuce.jpg)"],
+];
+
+
 var mape = [
     [0,h/2,0,90,0,0,w,w,"url(img/zeme.jpg)"],//grida
     [0,0,-w/2,0,0,0,w,h,"url(img/siena.jpg)"],//priekseja siena
@@ -95,7 +105,7 @@ function createWorld(pasaule, nosaukums) {
     }
 }
 
-createWorld(mape, "map");
+createWorld(mapeAuce, "map");
 
 function update() {
     dzt = forward - backward;
