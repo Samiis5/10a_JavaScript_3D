@@ -28,6 +28,7 @@ function player(x, y, z, rx, ry, rz) {
 
 var pawn = new player(0, 0, 0, 0, 0, 0);
 
+const deg = Math.PI/180;
 var vel = 5;
 var forward = 0;
 var backward = 0;
@@ -94,8 +95,11 @@ function createWorld(pasaule, nosaukums) {
 createWorld(mape, "pasaule2");
 
 function update() {
-    dz = forward - backward;
+    dz = -(forward - backward);
     dx = left - right;
+    
+    dx = dx * Math.cos(pawn.ry*deg) - dz * Math.sin(pawn.ry*deg);
+    dz = -dx * Math.sin(pawn.ry*deg) - dz * Math.cos(pawn.ry*deg);
 
     drx = mouseY;
     dry = -mouseX;
