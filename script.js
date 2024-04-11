@@ -11,6 +11,16 @@ var map = [
 
 var h = 500;
 var w = 3000;
+var mapeAuce = [
+    [0,h/2,0,90,0,0,w,w,"url(img/gridaAuce.jpg)"],//grida
+    [0,0,-w/2,0,0,0,w,h,"url(img/sienaAuce.jpg)"],//priekseja siena
+    [-w/2,0,0,0,90,0,w,h,"url(img/sienaAuce.jpg)"],//kreisa siena
+    [w/2,0,0,0,90,0,w,h,"url(img/sienaAuce.jpg)"],//laba siena
+    [0,0,w/2,0,0,0,w,h,"url(img/sienaAuce.jpg)"],
+    [0,-h/2,0,90,0,0,w,w,"url(img/griestiAuce.jpg)"],
+];
+
+
 var mape = [
     [0,h/2,0,90,0,0,w,w,"url(img/zeme.jpg)"],//grida
     [0,0,-w/2,0,0,0,w,h,"url(img/siena.jpg)"],//priekseja siena
@@ -28,6 +38,16 @@ var mapeSam = [
     [0,0,w/2,0,0,0,w,h,"url(img/ceilingsam.jpg)"],
     [0,-h/2,0,90,0,0,w,w,"url(img/ceilingsam.jpg)"],
 ];
+
+var mapeToms = [
+    [0,h/2,0,90,0,0,w,w,"url(img/zemeToms.jpg)"],//grida
+    [0,0,-w/2,0,0,0,w,h,"url(img/sienaToms.jpg)"],//priekseja siena
+    [-w/2,0,0,0,90,0,w,h,"url(img/sienaToms.jpg)"],//kreisa siena
+    [w/2,0,0,0,90,0,w,h,"url(img/sienaToms.jpg)"],//laba siena
+    [0,0,w/2,0,0,0,w,h,"url(img/sienaToms.jpg)"],
+    [0,-h/2,0,90,0,0,w,w,"url(img/woodToms.jpg)"],
+];
+
 
 function player(x, y, z, rx, ry, rz) {
     this.x = x;
