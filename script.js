@@ -8,14 +8,15 @@ var map = [
     [1000,0,0,0,90,0,2000,200,"rgba(17, 73, 255, 0.5)"],//laba siena
     [0,0,1000,0,0,0,2000,200,"rgba(74, 88, 69, 0.5)"]
 ];
-
+var h = 500;
+var w = 3000;
 var mape = [
-    [0,100,0,90,0,0,2000,2000,"red"],//grida
-    [0,0,-1000,0,0,0,2000,200,"pink"],//priekseja siena
-    [-1000,0,0,0,90,0,2000,200,"black"],//kreisa siena
-    [1000,0,0,0,90,0,2000,200,"cyan"],//laba siena
-    [0,0,1000,0,0,0,2000,200,"green"],
-    [0,-100,0,90,0,0,2000,2000,"yellow"],
+    [0,h/2,0,90,0,0,w,w,"red"],//grida
+    [0,0,-w/2,0,0,0,w,h,"pink"],//priekseja siena
+    [-w/2,0,0,0,90,0,w,h,"black"],//kreisa siena
+    [w/2,0,0,0,90,0,w,h,"cyan"],//laba siena
+    [0,0,w/2,0,0,0,w,h,"green"],
+    [0,-h/2,0,90,0,0,w,w,"yellow"],
 ];
 
 function player(x, y, z, rx, ry, rz) {
