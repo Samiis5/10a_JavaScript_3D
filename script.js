@@ -14,7 +14,8 @@ var mape = [
     [0,0,-1000,0,0,0,2000,200,"pink"],//priekseja siena
     [-1000,0,0,0,90,0,2000,200,"black"],//kreisa siena
     [1000,0,0,0,90,0,2000,200,"cyan"],//laba siena
-    [0,0,1000,0,0,0,2000,200,"green"]
+    [0,0,1000,0,0,0,2000,200,"green"],
+    [0,-100,0,90,0,0,2000,2000,"yellow"],
 ];
 
 function player(x, y, z, rx, ry, rz) {
@@ -109,9 +110,16 @@ function update() {
     pawn.z += dz;
     pawn.x += dx;
 
-    if(lock){
+    if(lock){   
+        if(pawn.rx < -35){
+            pawn.rx = -35;
+        }
+        if(pawn.rx > 35){
+            pawn.rx = 35;
+        }
         pawn.rx += drx;
         pawn.ry += dry;
+        console.log(`pawn.rx = ${pawn.rx} un drx = ${drx}`)
     }
     
 
