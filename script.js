@@ -95,11 +95,11 @@ function createWorld(pasaule, nosaukums) {
 createWorld(mape, "pasaule2");
 
 function update() {
-    dz = -(forward - backward);
-    dx = left - right;
+    dzt = forward - backward;
+    dxt = right - left;
     
-    dx = dx * Math.cos(pawn.ry*deg) - dz * Math.sin(pawn.ry*deg);
-    dz = -dx * Math.sin(pawn.ry*deg) - dz * Math.cos(pawn.ry*deg);
+    dx = dxt * Math.cos(pawn.ry*deg) - dzt * Math.sin(pawn.ry*deg);
+    dz = - dxt * Math.sin(pawn.ry*deg) - dzt * Math.cos(pawn.ry*deg);
 
     drx = mouseY;
     dry = -mouseX;
@@ -119,11 +119,11 @@ function update() {
         translateZ(600px)
         rotateX(${-pawn.rx}deg)
         rotateY(${-pawn.ry}deg)
-        rotateZ(${pawn.rz}deg)
+        rotateZ(${-pawn.rz}deg)
         translate3d(
-            ${pawn.x}px, 
-            ${pawn.y}px, 
-            ${pawn.z}px
+            ${-pawn.x}px, 
+            ${-pawn.y}px, 
+            ${-pawn.z}px
         ) 
     `;
 }
