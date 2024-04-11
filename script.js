@@ -12,12 +12,12 @@ var map = [
 var h = 500;
 var w = 3000;
 var mape = [
-    [0,h/2,0,90,0,0,w,w,"url(img/zeme.jpg)"],//grida
-    [0,0,-w/2,0,0,0,w,h,"url(img/siena.jpg)"],//priekseja siena
-    [-w/2,0,0,0,90,0,w,h,"url(img/siena.jpg)"],//kreisa siena
-    [w/2,0,0,0,90,0,w,h,"url(img/siena.jpg)"],//laba siena
-    [0,0,w/2,0,0,0,w,h,"url(img/siena.jpg)"],
-    [0,-h/2,0,90,0,0,w,w,"url(img/wood.jpg)"],
+    [0,h/2,0,90,0,0,w,w,"url(img/ceilingsam.jpg)"],//grida
+    [0,0,-w/2,0,0,0,w,h,"url(img/ceilingsam.jpg)"],//priekseja siena
+    [-w/2,0,0,0,90,0,w,h,"url(img/ceilingsam.jpg)"],//kreisa siena
+    [w/2,0,0,0,90,0,w,h,"url(img/ceilingsam.jpg)"],//laba siena
+    [0,0,w/2,0,0,0,w,h,"url(img/ceilingsam.jpg)"],
+    [0,-h/2,0,90,0,0,w,w,"url(img/ceilingsam.jpg)"],
 ];
 
 function player(x, y, z, rx, ry, rz) {
