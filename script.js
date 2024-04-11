@@ -111,13 +111,15 @@ function update() {
     pawn.x += dx;
 
     if(lock){   
-        if(pawn.rx < -35){
+        if(pawn.rx + drx < -35){
             pawn.rx = -35;
         }
-        if(pawn.rx > 35){
+        if(pawn.rx + drx > 35){
             pawn.rx = 35;
+        } else {
+            pawn.rx += drx;
         }
-        pawn.rx += drx;
+        
         pawn.ry += dry;
         console.log(`pawn.rx = ${pawn.rx} un drx = ${drx}`)
     }
