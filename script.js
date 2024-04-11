@@ -11,13 +11,13 @@ var map = [
 
 var h = 500;
 var w = 3000;
-var mape = [
-    [0,h/2,0,90,0,0,w,w,"url(img/zeme.jpg)"],//grida
-    [0,0,-w/2,0,0,0,w,h,"url(img/siena.jpg)"],//priekseja siena
-    [-w/2,0,0,0,90,0,w,h,"url(img/siena.jpg)"],//kreisa siena
-    [w/2,0,0,0,90,0,w,h,"url(img/siena.jpg)"],//laba siena
-    [0,0,w/2,0,0,0,w,h,"url(img/siena.jpg)"],
-    [0,-h/2,0,90,0,0,w,w,"url(img/wood.jpg)"],
+var mapelote = [
+    [0,h/2,0,90,0,0,w,w,"url(img/floorl.jpg)"],//grida
+    [0,0,-w/2,0,0,0,w,h,"url(img/walll2.jpg)"],//priekseja siena
+    [-w/2,0,0,0,90,0,w,h,"url(img/walll2.jpg)"],//kreisa siena
+    [w/2,0,0,0,90,0,w,h,"url(img/walll2.jpg)"],//laba siena
+    [0,0,w/2,0,0,0,w,h,"url(img/walll2.jpg)"],
+    [0,-h/2,0,90,0,0,w,w,"url(img/ceilingl3.jpg)"],
 ];
 
 function player(x, y, z, rx, ry, rz) {
@@ -95,7 +95,7 @@ function createWorld(pasaule, nosaukums) {
     }
 }
 
-createWorld(mape, "map");
+createWorld(mapelote, "map");
 
 function update() {
     dzt = forward - backward;
