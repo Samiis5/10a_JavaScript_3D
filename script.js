@@ -77,8 +77,8 @@ container.onclick = function(){
 function createWorld(pasaule, nosaukums) {
     for(let i = 0; i < pasaule.length; i++){
         let newElement = document.createElement('div');
-        newElement.className = "square" + nosaukums;
-        newElement.id = "square" + nosaukums + i;
+        newElement.className = `square${nosaukums}`;
+        newElement.id = `square${nosaukums}${i}`;
         newElement.style.position = "absolute";
         newElement.style.height = pasaule[i][7] + "px";
         newElement.style.width = pasaule[i][6]+"px";
@@ -94,7 +94,7 @@ function createWorld(pasaule, nosaukums) {
     }
 }
 
-createWorld(mape, "pasaule2");
+createWorld(map, "map");
 
 function update() {
     dzt = forward - backward;
